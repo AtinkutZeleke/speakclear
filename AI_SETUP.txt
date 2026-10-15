@@ -1,0 +1,7 @@
+OPTIONAL AI SETUP (advanced)
+1. Create a Cloudflare account and a new Worker. Paste cloudflare-worker.js into the Worker editor and deploy.
+2. In Worker Settings -> Variables and Secrets, add OPENAI_API_KEY as a SECRET from your own OpenAI API account, and SPEAKCLEAR_ACCESS_CODE as a long random SECRET. This is a server-side secret, never commit it to GitHub.
+3. In SpeakClear -> Settings, paste your deployed Worker HTTPS URL and your access code, then Save AI connection and Test connection. The access code is stored only in memory for the current tab.
+4. In Conversations, speak or type your answer and choose Evaluate. With the Worker configured, it provides AI text feedback; without it, the offline coach works.
+5. Cloudflare and OpenAI API billing/quotas may apply. The simple shared access code is intended for personal experimentation, NOT public production security. Restrict access, set Cloudflare rate limits, monitor usage, and rotate the code if leaked. The Worker has no built-in rate limiting.
+6. This AI coach receives TRANSCRIPTS only. It does not receive or acoustically assess recorded audio. True phoneme-level pronunciation grading needs a separate specialist speech assessment service and backend integration.
